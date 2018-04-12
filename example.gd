@@ -12,8 +12,8 @@ func _ready():
   set_physics_process(true)
   
   for tile in $tilemaps.get_children():
-    var tmp = tile.name.right(tile.name.length() - 3).split("x")
-    maptiles[tmp[0]+'x'+tmp[1]] = {'path': tile.get_path(), 'x': tmp[0], 'y': tmp[1]}
+    var tmp = tile.name.right(tile.name.length() - 3)
+    maptiles[tmp] = {'path': tile.get_path()}
   
   
 func getTilemap(x, y):
@@ -71,7 +71,7 @@ func checkMapTiles():
     #top left
     visibleGrids[str(currentGrid.x-1)+"x"+str(currentGrid.y-1)] = true
   
-  print(str(visibleGrids.size())+" Grids visible")
+  #print(str(visibleGrids.size())+" Grids visible")
   
   for key in maptiles:
     if(visibleGrids.has(key)):
