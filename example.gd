@@ -63,7 +63,7 @@ func checkMapTiles():
     visibleGrids[str(currentGrid.x+1)+"x"+str(currentGrid.y+1)] = true
   if(gridPos.y > threshold.y && gridPos.x < threshold.x):
     #bottom left
-    visibleGrids[str(currentGrid.x+1)+"x"+str(currentGrid.y+1)] = true
+    visibleGrids[str(currentGrid.x-1)+"x"+str(currentGrid.y+1)] = true
   if(gridPos.y < threshold.x && gridPos.x > threshold.y):
     #top right
     visibleGrids[str(currentGrid.x+1)+"x"+str(currentGrid.y-1)] = true
